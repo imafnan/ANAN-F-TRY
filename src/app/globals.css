@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F4ED; /* Page BG / Cream */
+  --foreground: #1A1A1A; /* Near Black */
+  --primary: #1B5E20;    /* Dark Forest Green */
+  --primary-hover: #123F15;
+  --cream-light: #F5F5DC;
+  
+  --toastify-color-success: #1B5E20;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-cream-light: var(--cream-light);
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B5E20;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #123F15;
+}
+
+/* Printing styles for A4 Invoice */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
